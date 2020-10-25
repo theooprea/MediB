@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="PatientMobileApp.CardViewTemplate">
+
+    <Frame IsClippedToBounds="True"
+           HasShadow="True"
+           BackgroundColor="White">
+        <Frame.Margin>
+            <OnPlatform x:TypeArguments="Thickness" Android="7" iOS="7" />
+        </Frame.Margin>
+        <Frame.Padding>
+            <OnPlatform x:TypeArguments="Thickness" Android ="5" iOS="5" />
+        </Frame.Padding>
+
+        <StackLayout Orientation="Horizontal">
+            <Grid VerticalOptions="CenterAndExpand"
+                  Padding="0"
+                  HorizontalOptions="FillAndExpand"
+                  BackgroundColor="Transparent">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <StackLayout Orientation="Horizontal" VerticalOptions="Start">
+                    <Label FontAttributes="None" Grid.Row="0"
+                           HorizontalTextAlignment="Start"
+                           VerticalTextAlignment="Center"
+                           FontSize="12"
+                           Text="{Binding doc_name, Mode=TwoWay}" TextColor="Gray">
+                    </Label>
+                </StackLayout>
+
+                <Grid Grid.Row="1">
+                    <StackLayout Orientation="Horizontal">
+                        <Label FontAttributes="None"
+                               Grid.Row="1"
+                               HorizontalTextAlignment="Start"
+                               VerticalTextAlignment="Start"
+                               FontSize="12"
+                               Text="{Binding when, Mode=TwoWay}" TextColor="Black" />
+                    </StackLayout>
+                </Grid>
+
+                <Grid Grid.Row="2"
+                      BackgroundColor="Transparent"
+                      Padding="4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Row="0" Grid.Column="0"
+                           Text="{Binding infos}" TextColor="Black" HorizontalOptions="Start" VerticalOptions="Start" />
+                </Grid>
+            </Grid>
+        </StackLayout>
+    </Frame>
+  
+</ContentView>

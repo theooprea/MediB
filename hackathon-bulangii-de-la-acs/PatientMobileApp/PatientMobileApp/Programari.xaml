@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:PatientMobileApp"
+             mc:Ignorable="d"
+             x:Class="PatientMobileApp.Programari">
+
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal" Margin="10, 0, 0, 0">
+            <Label Text="Programari" FontSize="20" TextColor="White" />
+        </StackLayout>
+    </NavigationPage.TitleView>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="LOG OUT" Clicked="LogOut" />
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#ccffff">
+            <ListView x:Name="listaProgramari" ItemsSource="{Binding lista_programari, Mode=TwoWay}" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Frame HasShadow="True" Margin="5" BorderColor="White"  CornerRadius="5">
+                                <StackLayout>
+                                    <Label Text="{Binding appointment}" TextColor="#2db300" FontSize="20"></Label>
+                                    <Label Text="{Binding specializare}" TextColor="Gray" FontSize="17" FontAttributes="Italic"></Label>
+                                    <StackLayout Orientation="Horizontal" Spacing="1">
+                                        <Label Text="dr." TextColor="Black" FontSize="15" FontAttributes="None"></Label>
+                                        <Label Text="{Binding lname}" TextColor="Black" FontSize="15" FontAttributes="None"></Label>
+                                        <Label Text="{Binding fname}" TextColor="Black" FontSize="15" FontAttributes="None"></Label>
+                                    </StackLayout>
+                                </StackLayout>
+                            </Frame>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

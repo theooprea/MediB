@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+         xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+         x:Class="PatientMobileApp.Dashboard"
+         xmlns:pages="clr-namespace:PatientMobileApp">
+
+    <MasterDetailPage.Master>
+        <ContentPage Title="User Menu">
+            <StackLayout Orientation="Vertical" BackgroundColor="White">
+                <ScrollView VerticalOptions="Start">
+                    <StackLayout BackgroundColor="White">
+                        <Image Source="Photo1.png" BackgroundColor="White" HeightRequest="200"
+                                                    WidthRequest="200" VerticalOptions="Center" />
+                        <StackLayout BackgroundColor="White">
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand"
+                                     MinimumHeightRequest="1" MinimumWidthRequest="1" BackgroundColor="Black" >
+                                <Label Text="a" FontSize="1"></Label>
+                             </StackLayout>
+                        <ListView x:Name="menuList" BackgroundColor="White" ItemTapped="Item_Tapped">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                     <ViewCell>
+                                        <StackLayout BackgroundColor="White">
+                                                <Label Text="{Binding OptionName}" Margin="5" />
+                                        </StackLayout>
+                                     </ViewCell>
+                                    </DataTemplate>
+                               </ListView.ItemTemplate>
+                             </ListView>
+                        </StackLayout>
+                    </StackLayout>
+                </ScrollView>
+            </StackLayout>
+        </ContentPage>
+    </MasterDetailPage.Master>
+
+    <MasterDetailPage.Detail>
+        <ContentPage>
+        </ContentPage>
+    </MasterDetailPage.Detail>
+
+</MasterDetailPage>

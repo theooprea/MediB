@@ -1,0 +1,6 @@
+.env
+artisan/
+vendor/
+storage/
+node_modules/
+public/pdf/

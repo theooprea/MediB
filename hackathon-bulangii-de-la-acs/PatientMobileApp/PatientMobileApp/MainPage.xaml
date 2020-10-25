@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="PatientMobileApp.MainPage" BackgroundColor="White">
+
+        <!-- Entry de tip text pentru codul de pe cardul de sanatate -->
+    <StackLayout Margin="0, 100, 0, 0" VerticalOptions="Start" BackgroundColor="White" Orientation="Vertical">
+
+        <Image Source="Photo1.png" BackgroundColor="White" HeightRequest="200"
+                                                    WidthRequest="200" VerticalOptions="Start" />
+
+        <Entry Placeholder="Email"
+               IsSpellCheckEnabled="false"
+               IsTextPredictionEnabled="False"
+               TextChanged="WhenCodeChanged"
+               VerticalOptions="Center"/>
+        <!-- Entry de tip text pentru parola utilizatorului -->
+        <Entry Placeholder="Parola"
+               IsSpellCheckEnabled="false"
+               IsTextPredictionEnabled="false"
+               IsPassword="true"
+               TextChanged="WhenPasswordChanged"
+               VerticalOptions="Center"
+               />
+        <!-- Butonul care lanseaza procesul de LOG IN-->
+        <Button Text="LOG IN" 
+                Clicked="WhenButtonClicked" VerticalOptions="Start"/>
+    </StackLayout>
+
+</ContentPage>
